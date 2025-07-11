@@ -10,4 +10,3 @@ public interface ClipService {
     List<Clip> getAllClips();
     Clip likeClip(Long id);
 }
-

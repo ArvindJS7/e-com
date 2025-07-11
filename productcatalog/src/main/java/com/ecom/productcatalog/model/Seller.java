@@ -3,7 +3,6 @@ package com.ecom.productcatalog.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -23,8 +22,17 @@ public class Seller {
 
     private String password;
 
+    private String profilePicturePath;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Product> products;
-}
 
+    public enum Role {
+        USER,
+        SELLER
+    }
+}

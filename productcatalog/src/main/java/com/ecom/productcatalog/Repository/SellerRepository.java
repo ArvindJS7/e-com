@@ -12,4 +12,7 @@ public interface SellerRepository extends JpaRepository<Seller, Long> {
   
     Optional<Seller> findByPhoneNumber(String phoneNumber);
 
+
+    Optional<Seller> findByPhoneNumberAndPassword(String phone, String password);
+
 }
